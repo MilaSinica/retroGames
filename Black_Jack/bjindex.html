@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/png" href="../nerd/009-nerd-4.png"/>
+	<title>Black Jack Game</title>
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="bjstyles.css">
+</head>
+<body>
+	<div id="header">
+		<div class="header-content">
+			<img src="../nerd/049-gamepad.png" alt="Gamepad icon">
+			<img id="logo" src="../nerd/logo.png" title="Game Menu" alt="Logo icon 1">
+			<img id="logo2" src="../nerd/logo2.png" title="Game Menu" alt="Logo icon 2">
+			<img id="logo3" src="../nerd/logo3.png" title="Game Menu" alt="Logo icon 3">
+			<img src="../nerd/027-cpu.png" class = "nono-sm nono-md" alt="Cpu icon">
+			<img src="../nerd/038-robot.png" alt="Robot icon">
+			<img src="../nerd/026-tetris.png" class = "nono-sm" alt="Tetris icon">
+			<img src="../nerd/035-invaders.png" class = "nono-sm nono-md" alt="Invaders game icon">
+			<img src="../nerd/029-robot-1.png" class="nono-xs" alt="Robot icon">
+			<img src="../nerd/047-nerd.png" alt="Nerd icon">
+			<img src="../nerd/014-heart.png" alt="Heart icon">
+			<img src="../nerd/043-nerd-1.png" alt="Nerd icon">
+			<img src="../nerd/030-comic.png" alt="Comic icon">
+			<img src="../nerd/002-strategy.png" class = "nono-sm nono-md" alt="Strategy icon">
+			<img src="../nerd/034-formula.png" class = "nono-sm nono-md" alt="Formula icon">
+			<img src="../nerd/009-nerd-4.png" alt="Nerd icon">
+			<img src="../nerd/003-personal-computer.png" class = "nono-sm nono-md" alt="Personal computer icon">
+			<img src="../nerd/005-startup.png" alt="Startup icon">
+			<img src="../nerd/048-gameboy.png" class = "nono-sm nono-md" alt="Gameboy icon">
+			<img src="../nerd/031-book.png" alt="Book icon">
+			<img src="../nerd/019-binary-code.png" class = "nono-sm" alt="Binary code icon">
+		</div>
+	</div>
+
+	<div id="navbar">
+		<button id="reset" class="main-btn btn-coursor">New Game</button>
+		<button id = "help" class = "main-btn btn-coursor">Help</button>
+	</div>
+
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <div class="modal-header">
+	      <span class="close">&times;</span>
+	      <h2>Help<img width="30px" src="../nerd/045-idea.png" alt="Lamp icon"></h2>
+	    </div>
+	    <div class="modal-body">
+	     	<span class="help">Press <strong>"DEAL"</strong> to play a new hand. You can hit, stand and double in a hand.</span>
+	     	<span class="help">The aim of the game is to beat dealer`s hand while staying below 21.</span>
+	     	<span class="help">If you have higher score than the dealer and not bust, you win the hand.</span>
+	     	<span class="help"><strong>"HIT"</strong> deals you one card, you may hit 5 times. Your point is not going over 21.</span>
+	     	<span class="help"><strong>"STAND"</strong> button ends your turn. You can stand if you want no more cards.</span>
+	     	<span class="help">All face cards are worth 10. An ace is worth 11 unless the hand would exceed 21 - in which case an ace is worth 1.</span>
+	     	<span class="help">Win a hand to receive a bet score to your balance. If dealer wins - you`ll lose it.</span>
+	     	<span class="help">Press <strong>"DOUBLE"</strong> to double a bet. You can double only one time - before you hit.</span>
+	     	<span class="help">The game is over after you have a 0 balance. Reset game to renew a balance.</span>
+	    </div>
+	    <div class="modal-footer">
+	      <h3>Good Luck!</h3>
+	    </div>
+	  </div>
+	</div>
+
+	<div id = "win">YOU WON</div>
+	<div id = "lost">YOU LOST</div>
+	<div id = "tied">YOU TIED</div>
+
+	<div class="results">
+		<div class= "result-section">
+			<div class="score info-text" title="Player Score"><img src="assets/player.png" class="icon-btn" alt = "player-icon"><br/><span id="player-score">0</span></div>
+		</div>
+		<div class="result-section">
+			<p class = "info-text-2 info-text">Credit Balance: <span id="credit-balance">60</span></p>
+			<p class = "info-text-2 info-text">Current Bet: <span id="current-bid">10</span></p>
+		</div>
+		<div class= "result-section">
+			<div class = "score info-text" title="Dealer Score"><img src="assets/dealer.png" class="icon-btn" alt = "dealer-icon"><br/><span id="dealer-score">?</span></div>
+		</div>
+	</div>
+
+
+	<div class="wrap">
+
+		<div class="container">
+			<h1><span id="result"></span></h1>
+			<div class="square s1"></div>
+			<div class="square s2"></div>
+			<div class="square s3"></div>
+			<div class="square s4"></div>
+			<div class="square s5"></div>
+			<div class="square s6"></div>
+			<div class="square s7"></div>
+		</div>
+
+		<div class="container">
+			<h1><span id="result"></span></h1>
+			<div class="square s1"></div>
+			<div class="square s2"></div>
+			<div class="square s3"></div>
+			<div class="square s4"></div>
+			<div class="square s5"></div>
+			<div class="square s6"></div>
+			<div class="square s7"></div>
+		</div>
+	</div>
+
+	<div class="action-bar">
+		<button id="stand" class="btn-action btn-stand btn-coursor"><img src="assets/palm.png" class="icon-btn">Stand</button>
+		<button id="hit" class="btn-action btn-hit btn-coursor"><img src="assets/card.png" class="icon-btn">Hit</button>
+		<button id="double" class="btn-action btn-double btn-coursor"><img src="assets/coins.png" class="icon-btn">Double<span id="bid">
+		</button>
+		<button id = "playAgain" class = "btn-action reset-btn btn-coursor"><img src="assets/hand.png" class="icon-btn">Deal</button>
+	</div>
+
+	<audio id="adioWin">
+  		<source src="assets/win.wav" type="audio/wav">
+	</audio>
+
+	<audio id="adioLost">
+  		<source src="assets/lost.wav" type="audio/wav">
+	</audio>
+
+	<audio id="adioTied">
+  		<source src="assets/tied.wav" type="audio/wav">
+	</audio>
+
+	<audio id="adioError">
+  		<source src="assets/wrong.wav" type="audio/wav">
+	</audio>
+	
+	<audio id="adioPop">
+  		<source src="assets/pop.wav" type="audio/wav">
+	</audio>
+
+	<audio id="adioCards">
+  		<source src="assets/cards.wav" type="audio/wav">
+	</audio>
+
+	<audio id="adioHit">
+  		<source src="assets/hit.wav" type="audio/wav">
+	</audio>
+
+	<audio id="adioCoin">
+  		<source src="assets/coin.wav" type="audio/wav">
+	</audio>
+
+
+	<script type="text/javascript" src="../general.js"></script>	
+	<script type="text/javascript" src = "bjmain.js"></script>
+
+</body>
+</html>
