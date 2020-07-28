@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/png" href="../nerd/009-nerd-4.png"/>
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="styles.css">
+        
+        <title>Simon Memory Game</title>
+    </head>
+
+    <body>
+        <div id="header">
+            <div class="header-content">
+                <img src="../nerd/049-gamepad.png" alt="Gamepad icon">
+                <img id="logo" src="../nerd/logo.png" title="Game Menu" alt="Logo icon 1">
+                <img id="logo2" src="../nerd/logo2.png" title="Game Menu" alt="Logo icon 2">
+                <img id="logo3" src="../nerd/logo3.png" title="Game Menu" alt="Logo icon 3">
+                <img src="../nerd/027-cpu.png" class = "nono-sm nono-md" alt="Cpu icon">
+                <img src="../nerd/038-robot.png" alt="Robot icon">
+                <img src="../nerd/026-tetris.png" class = "nono-sm" alt="Tetris icon">
+                <img src="../nerd/035-invaders.png" class = "nono-sm nono-md" alt="Invaders game icon">
+                <img src="../nerd/029-robot-1.png" class="nono-xs" alt="Robot icon">
+                <img src="../nerd/047-nerd.png" alt="Nerd icon">
+                <img src="../nerd/014-heart.png" alt="Heart icon">
+                <img src="../nerd/043-nerd-1.png" alt="Nerd icon">
+                <img src="../nerd/030-comic.png" alt="Comic icon">
+                <img src="../nerd/002-strategy.png" class = "nono-sm nono-md" alt="Strategy icon">
+                <img src="../nerd/034-formula.png" class = "nono-sm nono-md" alt="Formula icon">
+                <img src="../nerd/009-nerd-4.png" alt="Nerd icon">
+                <img src="../nerd/003-personal-computer.png" class = "nono-sm nono-md" alt="Personal computer icon">
+                <img src="../nerd/005-startup.png" alt="Startup icon">
+                <img src="../nerd/048-gameboy.png" class = "nono-sm nono-md" alt="Gameboy icon">
+                <img src="../nerd/031-book.png" alt="Book icon">
+                <img src="../nerd/019-binary-code.png" class = "nono-sm" alt="Binary code icon">
+            </div>
+        </div>
+
+        <div id="navbar">
+            <button id="reset" class="main-btn btn-coursor btn-marginright">New Game</button>
+            <button id = "easy" class="main-btn btn-coursor">Easy</button>
+            <button id = "hard" class = "main-btn btn-coursor active">Hard</button>
+            <button id = "help" class = "main-btn btn-coursor">Help</button>
+        </div>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+              <div class="modal-content">
+                <div class="modal-header" id="modal-header">
+                  <span class="close">&times;</span>
+                  <h2>Help<img width="30px" src="../nerd/045-idea.png" alt="Lamp icon"></h2>
+                </div>
+
+                <div class="modal-body">
+
+                    <span class="help">Play this Simon game and have fun testing your memory.</span>
+                    <span class="help">Simon lights one of the coloured pads and sounds a tone, then two, then three, etc.</span>
+                    <span class="help">Player attempts to match Simon by pressing the pads in the proper sequence</span>
+                    <span class="help">If player fails he loses a life, if lives run out - the game is over.</span>
+                    <span class="help">Game <b>HARD MODE</b> has 20 rounds, that means that in the last round player needs to repeat 20 signals, and only 2 lives - player has only one chance for a mistake.</span>
+                    <span class="help">There are 10 rounds and 3 lives to lose in the <b>EASY MODE</b>.</span>
+                    <span class="help">Rack up high scores, improve your memory and enjoy this classic game.</span>
+                </div>
+                    <div class="modal-footer">
+                        <h3>Good Luck!</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrap">
+
+                <div id="outer-circle" class="circles">
+                    <div id="topleft" class="sectors"></div>
+                    <div id="topright" class="sectors"></div>
+                    <div id="bottomleft" class="sectors"></div>
+                    <div id="bottomright" class="sectors"></div>
+                    
+                    <div id="inner-circle" class="circles">
+
+                      <div id="switches">
+                        <button class="main-btn btn-coursor" id="start">Start</button>
+                      </div>
+
+                      <div id="turn">ROUND: - </div>
+
+                      <div id="lives">LIVES: - </div>
+
+                    </div>
+                  </div>
+
+            </div>
+
+        <audio id="audioWrong">
+            <source src="assets/wrong.flac">
+        </audio>
+
+        <audio id="adioPop">
+            <source src="assets/pop.wav" type="audio/wav">
+        </audio>
+
+        <audio id="clip1">
+            <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3">
+        </audio>
+
+        <audio id="clip2">
+            <source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3">
+        </audio>
+
+        <audio id="clip3">
+            <source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3">
+        </audio>
+        
+        <audio id="clip4">
+            <source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3">
+        </audio>
+
+        <audio id="audioWin">
+            <source src="assets/match.wav" type="audio/wav">
+        </audio>
+
+        <audio id="audioLost">
+            <source src="assets/lose.wav" type="audio/wav">
+        </audio>
+
+        <script type="text/javascript" src="../general.js"></script>        
+        <script src="main.js"></script>
+    </body>
+</html>

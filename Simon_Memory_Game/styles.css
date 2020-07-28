@@ -1,0 +1,384 @@
+body {
+    background-color: #232323;
+    margin: 0;
+    font-family: 'PT Sans Caption', sans-serif;
+    letter-spacing: 1px;
+}
+
+/*========================================Game body================================================================*/
+.wrap{
+    margin: 1% auto;
+    width: 100%;
+    text-align: center;
+}
+
+#switches {
+    margin: 10% 12%;
+    z-index: -100;
+}
+
+.toggle {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  #turn, #lives {
+    text-transform: uppercase;
+    font-weight: bold;
+    outline: none;
+    font-size: 100%;
+    font-family: 'Press Start 2P', cursive;
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    color: white;
+  }
+
+  #lives{
+    margin: 50px 30px 0px 30px;
+  }
+
+  #turn{
+    margin: 0 30px;
+  }
+
+  .sectors{
+    position: absolute;
+    height: 225px;
+    width: 225px;
+    top: 50%;
+    left: 50%;
+    border-style: solid;
+    border-width: 5px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+  
+  #topleft {
+    border-radius: 225px 0 0 0;
+    -moz-border-radius: 225px 0 0 0;
+    -webkit-border-radius: 225px 0 0 0;
+    background: #009860;
+    margin: -225px 0px 0px -225px;
+  }
+  
+  #topright {
+    border-radius: 0 225px 0 0;
+    -moz-border-radius: 0 225px 0 0;
+    -webkit-border-radius: 0 225px 0 0;
+    background: #ed3b72;
+    margin: -225px 0px 0px 0px;
+  }
+  
+  #bottomleft {
+    border-radius: 0 0 0 225px;
+    -moz-border-radius: 0 0 0 225px;
+    -webkit-border-radius: 0 0 0 225px;
+    background: #dbcf58;
+    margin: 0px -225px 0px -225px;
+  }
+  
+  #bottomright {
+    border-radius: 0 0 225px 0;
+    -moz-border-radius: 0 0 225px 0;
+    -webkit-border-radius: 0 0 225px 0;
+    background: #009896;
+    margin: 0px 0px -225px 0px;
+  }
+  
+  #inner-circle {
+    position: absolute;
+    background: #152c49;
+    height: 225px;
+    width: 225px;
+    top: 50%;
+    left: 50%;
+    margin: -114.5px 0px 0px -114.5px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+
+  #outer-circle {
+    background: #385a94;
+    height: 450px;
+    width: 450px;
+    position: relative;
+    margin: auto;
+    box-shadow: 8px 8px 15px 5px #888888;
+  }
+
+  .circles {
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 10px;
+  }
+/*======================================Header and navbar========================================================================*/
+.header-content{
+    padding: 1% 1% 0% 1%;
+    text-align: justify;
+}
+.header-content > img {
+    width: 3.5%; /* Declare your value. Can be in relative units. */
+    display: inline-block;
+    vertical-align: middle;
+    /* IE fix. */
+    *display: inline;
+    zoom: 1;
+}
+.header-content:after {
+    content: "";
+    width: 100%;
+    display: inline-block;
+}
+#logo, #logo2, #logo3 {
+    cursor:pointer;
+    width: 7%;
+}
+#logo2, #logo3 {
+    display:none;
+}
+#header {
+    background-color: #009896;
+    width: 100%;
+}
+#navbar {
+    text-align: center;
+    margin: 1% 0 0 0;
+}
+span {
+    margin: 0;
+}
+
+/*======================================Buttons and result/goal displays====================================*/
+
+.btn-coursor{
+    cursor: pointer;
+}
+button{
+    border-radius: 12px;
+    height: 100%;
+    display: inline-block;
+    padding: 1%;
+    text-transform: uppercase;
+    font-weight: bold;
+    outline: none;
+    font-size: 100%;
+    font-family: 'Press Start 2P', cursive;
+    transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+}
+.main-btn {
+    background: none;
+    color: #009896;
+    font-size: 80%;
+    border: none;
+}
+
+#start {
+    padding: 10px;
+    font-size: 110%;
+}
+
+.btn-marginright {
+    margin-right: 20%;
+}
+
+.main-btn:hover {
+    background-color: #009896;
+    color: white;
+    border: none;
+}
+
+.btn-hover:hover { 
+    color: #009896;
+}
+
+.btn-hover:focus {
+    outline: none;
+    cursor: pointer;
+}
+.btn-hover:active {
+    color: white;
+}
+
+.btn-hover {
+    cursor: pointer;
+}
+
+.active {
+    background-color: #009896;
+    color: white;
+}
+
+/*=====================================================Modal Window=================================================================*/
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    z-index: 10000000000000000;
+
+}
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border-radius: 15px;
+
+}
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-header {
+    padding: 2px 16px;
+    background-color: #009896;
+    color: white;
+    border-radius: 15px 15px 0px 0px;
+    font-family: 'Press Start 2P', cursive;
+}
+.modal-body {
+    padding: 20px 16px;
+    letter-spacing: 0px;
+    border-radius: 15px;
+}
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #009896;
+    color: white;
+    border-radius: 0px 0px 15px 15px;
+    font-family: 'Press Start 2P', cursive;
+}
+.img-help-icon {
+    width: 50px;
+    padding: 1%;
+}
+.help {
+    display: block;
+    margin: 1.5%;
+}
+
+/*=============================================Media Queries============================================================*/
+@media (max-width: 1650px) {
+    .modal-content{
+        width: 60%;
+    }
+}
+
+@media (max-width: 900px) {
+    .header-content > img {
+        width: 5%;
+    }
+    img.nono-md {
+        display: none;
+        width: 100%;
+    }
+    img#logo, img#logo3, img#logo2 {
+        width: 10%;
+    }
+    .modal-content {
+        width: 90%;
+    }
+    .modal{
+        height: 80%;
+    }
+}
+@media (max-width: 650px){
+    .player-name{
+        font-size: 100%;
+    }
+    .input{
+        font-size: 100%;
+    }
+    .active .player-name::after {
+        font-size: 30px;
+    }
+    .player-0-panel,
+    .player-1-panel {
+        padding: 10px 20px 20px 20px;
+    }
+}
+@media (max-width: 600px) {
+    .header-content > img {
+        width: 7%;
+    }
+    .input{
+        font-size: 80%;
+    }
+    img.nono-sm {
+        display: none;
+        width: 100%;
+    }
+    img#logo, img#logo3, img#logo2 {
+        width: 15%;
+    }
+    .player-current-box {
+        width: 70%;
+    }
+    .player-current-label {
+        font-size: 40%;
+    }
+}
+
+@media (max-width: 500px) {
+    .dice {
+        width: 32%;
+        padding-bottom: 32%;
+        border: 2px solid black;
+    } 
+    .player-name{
+        font-size: 80%;
+    }
+    .active .player-name::after {
+        font-size: 20px;
+    }  
+    .player-0-panel,
+    .player-1-panel {
+        padding: 10px;
+    }  
+}
+
+@media (max-width: 400px) {
+    img.nono-xs {
+        display: none;
+    }
+}

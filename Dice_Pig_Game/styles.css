@@ -1,0 +1,439 @@
+body {
+    background-color: #232323;
+    margin: 0;
+    font-family: 'PT Sans Caption', sans-serif;
+    letter-spacing: 1px;
+}
+
+/*========================================Game body================================================================*/
+.wrap{
+    margin: 1% auto;
+    width: 100%;
+    text-align: center;
+}
+.container {
+    padding: 1%;
+    margin: 1% auto;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+.container-md {
+    width: 30%;
+    max-width: 300px;
+    vertical-align: middle;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+    background-color: #303030;
+}
+.container-sm {
+    width: 30%;
+    max-width: 300px;
+    vertical-align: middle;
+}
+.player-0-panel,
+.player-1-panel {
+    height: 300px;
+    padding: 10px 30px 30px 30px;
+}
+.btn-block, .dice-block{
+    margin: 7% auto 3% auto;
+}
+
+/**********************************************
+*** PLAYERS
+**********************************************/
+.info-text{
+    line-height: 1.5;
+    text-shadow: 1px 2px 3px #666;
+    font-size: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 2%;
+    font-family: 'Press Start 2P', cursive;
+    color: #f4e662;
+}
+.player-score, .player-name{
+    text-shadow: 1px 2px 3px #666;
+    text-align: center;
+}
+.player-name {
+    font-size: 120%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    position: relative;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.player-score {
+    font-size: 70px;
+    font-weight: 400;
+    color: #ed3b72;
+    margin-bottom: 30px;
+}
+
+.active { background-color: #009896; }
+.active .player-name { font-weight: 300; }
+
+.active .player-name::after {
+    content: "\2022";
+    font-size: 40px;
+    position: absolute;
+    color: #ed3b72;
+    top: -12px;  
+}
+
+.player-current-box {
+    background-color: #ed3b72;
+    color: #fff;
+    width: 60%;
+    margin: 0 auto;
+    padding: 10% 4% 7% 4%;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 20px;
+}
+
+.player-current-label {
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+    margin-bottom: 4%;
+    font-size: 60%;
+    color: #222;
+}
+
+.player-current-score {
+    font-size: 200%;
+}
+
+.dice {
+    width: 35%;
+    padding-bottom: 35%;
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+    border: 5px solid black;
+    border-radius: 20%;
+    margin: 3%;
+    background-color: white;
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.btn-text{
+    width: 100%;
+    color: white;
+    background: none;
+    border: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 100%;
+    text-shadow: 1px 2px 3px #666;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 2% auto;
+    line-height: 1.5;
+}
+.btn-hover:hover { font-weight: 600; }
+.btn-hover:hover i { margin-right: 20px; }
+.btn-hover:focus {
+    outline: none;
+    cursor: pointer;
+}
+
+.btn-hover {
+    cursor: pointer;
+}
+i {
+    color: #ed3b72;
+    display: inline-block;
+    margin-right: 15px;
+    margin-left: 15px;
+    line-height: 1;
+    vertical-align: text-top;
+    vertical-align: 20% !important;
+    transition: margin 0.3s;
+}
+
+form{
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+.input{
+    color: white;
+    font-size: 120%;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+    margin-left: 15%;
+}
+.final-score {
+    color: #555;
+    font-size: 120%;
+    text-align: center;
+    background-color: #232323;
+    /*padding: 3px;*/
+    width: 20%;
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+    -webkit-transition: all 0.30s ease-in-out;
+      -moz-transition: all 0.30s ease-in-out;
+      -ms-transition: all 0.30s ease-in-out;
+      -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    padding: 4%;
+    border: 1px solid #232323;;
+    border-radius: 10px;
+    margin: 3%;
+}
+.final-score:focus, .final-score:hover { 
+    color: white;
+    background-color: #4f4f4f;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    border: 1px solid rgba(81, 203, 238, 1);
+}
+
+.winner { background-color: #f4e662; }
+.winner .player-name { font-weight: 300; color: #ed3b72; }
+
+/*======================================Header and navbar========================================================================*/
+.header-content{
+    padding: 1% 1% 0% 1%;
+    text-align: justify;
+}
+.header-content > img {
+    width: 3.5%; /* Declare your value. Can be in relative units. */
+    display: inline-block;
+    vertical-align: middle;
+    /* IE fix. */
+    *display: inline;
+    zoom: 1;
+}
+.header-content:after {
+    content: "";
+    width: 100%;
+    display: inline-block;
+}
+#logo, #logo2, #logo3 {
+    cursor:pointer;
+    width: 7%;
+}
+#logo2, #logo3 {
+    display:none;
+}
+#header {
+    background-color: #009896;
+    width: 100%;
+}
+#navbar {
+    text-align: center;
+    margin: 1% 0 0 0;
+}
+span {
+    margin: 0;
+}
+.active {
+    background-color: #009896;
+    color: white;
+}
+/*======================================Buttons and result/goal displays====================================*/
+
+.btn-coursor{
+    cursor: pointer;
+}
+button{
+    border-radius: 12px;
+    height: 100%;
+    display: inline-block;
+    padding: 1%;
+    text-transform: uppercase;
+    font-weight: bold;
+    outline: none;
+    font-size: 100%;
+    font-family: 'Press Start 2P', cursive;
+    transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+}
+.main-btn {
+    background: none;
+    color: #009896;
+    font-size: 80%;
+    border: none;
+    margin: 0 8%;
+}
+.main-btn:hover {
+    background-color: #009896;
+    color: white;
+    border: none;
+}
+
+/*=====================================================Modal Window=================================================================*/
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    z-index: 10000000000000000;
+
+}
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border-radius: 15px;
+
+}
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-header {
+    padding: 2px 16px;
+    background-color: #009896;
+    color: white;
+    border-radius: 15px 15px 0px 0px;
+    font-family: 'Press Start 2P', cursive;
+}
+.modal-body {
+    padding: 20px 16px;
+    letter-spacing: 0px;
+    border-radius: 15px;
+}
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #009896;
+    color: white;
+    border-radius: 0px 0px 15px 15px;
+    font-family: 'Press Start 2P', cursive;
+}
+.img-help-icon {
+    width: 50px;
+    padding: 1%;
+}
+.help {
+    display: block;
+    margin: 1.5%;
+}
+
+/*=============================================Media Queries============================================================*/
+@media (max-width: 1650px) {
+    .modal-content{
+        width: 60%;
+    }
+}
+
+@media (max-width: 900px) {
+    .header-content > img {
+        width: 5%;
+    }
+    img.nono-md {
+        display: none;
+        width: 100%;
+    }
+    img#logo, img#logo3, img#logo2 {
+        width: 10%;
+    }
+    .modal-content {
+        width: 90%;
+    }
+    .modal{
+        height: 80%;
+    }
+}
+@media (max-width: 650px){
+    .player-name{
+        font-size: 100%;
+    }
+    .input{
+        font-size: 100%;
+    }
+    .active .player-name::after {
+        font-size: 30px;
+    }
+    .player-0-panel,
+    .player-1-panel {
+        padding: 10px 20px 20px 20px;
+    }
+}
+@media (max-width: 600px) {
+    .header-content > img {
+        width: 7%;
+    }
+    .btn-text, .input{
+        font-size: 80%;
+    }
+    img.nono-sm {
+        display: none;
+        width: 100%;
+    }
+    img#logo, img#logo3, img#logo2 {
+        width: 15%;
+    }
+    .player-current-box {;
+        width: 70%;
+    }
+    .player-current-label {
+        font-size: 40%;
+    }
+}
+
+@media (max-width: 500px) {
+    .dice {
+        width: 32%;
+        padding-bottom: 32%;
+        border: 2px solid black;
+    } 
+    .player-name{
+        font-size: 80%;
+    }
+    .active .player-name::after {
+        font-size: 20px;
+    }  
+    .player-0-panel,
+    .player-1-panel {
+        padding: 10px;
+    }  
+}
+
+@media (max-width: 400px) {
+    img.nono-xs {
+        display: none;
+    }
+}

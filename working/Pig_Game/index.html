@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Aldrich|Kanit:700|Maven+Pro:400,700|Play:400,700|Roboto+Mono:400,700|Sarpanch:400,700|Source+Code+Pro:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="styles.css">
+        
+        <title>Pig Dice Game</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div id="header">
+        <div class="header-content">
+            <img src="../nerd/049-gamepad.png" alt="Gamepad icon">
+            <img id="logo" src="../nerd/logo.png" title="Game Menu" alt="Logo icon 1">
+            <img id="logo2" src="../nerd/logo2.png" title="Game Menu" alt="Logo icon 2">
+            <img id="logo3" src="../nerd/logo3.png" title="Game Menu" alt="Logo icon 3">
+            <img src="../nerd/027-cpu.png" class = "nono-sm nono-md" alt="Cpu icon">
+            <img src="../nerd/038-robot.png" alt="Robot icon">
+            <img src="../nerd/026-tetris.png" class = "nono-sm" alt="Tetris icon">
+            <img src="../nerd/035-invaders.png" class = "nono-sm nono-md" alt="Invaders game icon">
+            <img src="../nerd/029-robot-1.png" class="nono-xs" alt="Robot icon">
+            <img src="../nerd/047-nerd.png" alt="Nerd icon">
+            <img src="../nerd/014-heart.png" alt="Heart icon">
+            <img src="../nerd/043-nerd-1.png" alt="Nerd icon">
+            <img src="../nerd/030-comic.png" alt="Comic icon">
+            <img src="../nerd/002-strategy.png" class = "nono-sm nono-md" alt="Strategy icon">
+            <img src="../nerd/034-formula.png" class = "nono-sm nono-md" alt="Formula icon">
+            <img src="../nerd/009-nerd-4.png" alt="Nerd icon">
+            <img src="../nerd/003-personal-computer.png" class = "nono-sm nono-md" alt="Personal computer icon">
+            <img src="../nerd/005-startup.png" alt="Startup icon">
+            <img src="../nerd/048-gameboy.png" class = "nono-sm nono-md" alt="Gameboy icon">
+            <img src="../nerd/031-book.png" alt="Book icon">
+            <img src="../nerd/019-binary-code.png" class = "nono-sm" alt="Binary code icon">
+        </div>
+    </div>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+              <!-- Modal content -->
+              <div class="modal-content">
+                <div class="modal-header" id="modal-header">
+                  <span class="close">&times;</span>
+                  <h2>Help<img width="30px" src="../nerd/045-idea.png" alt="Lamp icon"></h2>
+                </div>
+
+                <div class="modal-body">
+
+                    <span class="help">The game has 2 players, playing in rounds.</span>
+                    <span class="help">In each turn, a player rolls 2 dices as many times as he whishes. Each result get added to his ROUND score.</span>
+                    <span class="help">BUT, if the either die roll is 1, all player ROUND score gets lost. After that, it's the next player's turn.</span>
+                    <span class="help">FYI: the probability of rolling a 1 is 31% or 11/36 and the probability of rolling a double is 17% or 6/36.</span>
+                    <span class="help">If both dice show the same result then the player gets double score.</span>
+                    <span class="help">The player can choose to 'Hold', which means that his ROUND score gets added to his GLBAL score. After that, it's the next player's turn.</span>
+                    <span class="help">The first player to reach 30 points on GLOBAL score wins the game.</span>
+                    <span class="help">Enter your own preffered score instead of 30 points to change GOAL SCORE value.</span>
+                    </div>
+                    <div class="modal-footer">
+                        <h3>Good Luck!</h3>
+                    </div>
+                   </div>
+            </div>
+            <div class="wrapper clearfix">
+
+                <div class="player-0-panel active">
+                    <div class="player-name" id="name-0">Player 1</div>
+                    <div class="player-score" id="score-0">0</div>
+                    <div class="player-current-box">
+                        <div class="player-current-label">Current</div>
+                        <div class="player-current-score" id="current-0">0</div>
+                    </div>
+                </div>
+                
+                <div class="player-1-panel">
+                    <div class="player-name" id="name-1">Player 2</div>
+                    <div class="player-score" id="score-1">0</div>
+                    <div class="player-current-box">
+                        <div class="player-current-label">Current</div>
+                        <div class="player-current-score" id="current-1">0</div>
+                    </div>
+                </div>
+                
+                <button class="btn-new"><i class="fa fa-lg fa-gamepad "></i>New game</button>
+                <button class="btn-help" id = "help">Help</button>
+                <button class="btn-roll"><i class="fa fa-refresh fa-lg" aria-hidden="true"></i>Roll dice</button>
+                <button class="btn-hold"><i class="fa  fa-check fa-lg"></i>Hold</button>
+                
+                <input type="text" name="lname" placeholder="Goal: 30" id = "input" class="final-score" title="Enter Your Own Goal Score">
+
+
+                <img src="assets/dice-5.png" alt="Dice" class="dice">
+                <img src="assets/dice-5.png" alt="Dice" class="dice2">
+            </div>
+        </div>
+
+        <audio id="audioWrong">
+            <source src="assets/wrong.wav" type="audio/wav">
+        </audio>
+
+        <audio id="adioPop">
+            <source src="assets/pop.wav" type="audio/wav">
+        </audio>
+
+        <audio id="audioDice">
+            <source src="assets/dice.wav" type="audio/wav">
+        </audio>
+
+        <audio id="audioWin">
+            <source src="assets/match.wav" type="audio/wav">
+        </audio>
+
+        <script src="main.js"></script>
+    </body>
+</html>

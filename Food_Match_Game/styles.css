@@ -1,0 +1,453 @@
+body {
+	background-color: #232323;
+	margin: 0;
+	font-family: 'PT Sans Caption', sans-serif;
+	letter-spacing: 1px;
+}
+p {
+	width: 13%;
+	display: inline-block;
+	float: left;
+	margin: 1.8%;
+	padding-bottom: 13%;
+/*	border-radius: 25px;*/
+/*	transition: all 0.5s;
+		-webkit-transition: all 0.5s;
+		-moz-transition: all 0.5s;*/
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+p.clicked{
+  -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+          -ms-transform: rotateY(180deg);
+             transform: rotateY(180deg);
+  -webkit-transition: .2s ease-in;
+    -moz-transition: .2s ease-in;
+      -o-transition: .2s ease-in;
+        transition: .2s ease-in;
+
+}
+
+.container {
+	padding-top: 1%;
+	max-width: 1200px;
+	margin: 1% auto;
+	text-align: center;
+}
+.header-content{
+	padding-top: 1%;
+	padding-right: 1%;
+	padding-left: 1%;
+	padding-bottom: 0%;
+	text-align: justify;
+}
+.header-content > img {
+	width: 3.5%; /* Declare your value. Can be in relative units. */
+	display: inline-block;
+	vertical-align: middle;
+
+	/* IE fix. */
+	*display: inline;
+	zoom: 1;
+	}
+
+.header-content:after {
+	content: "";
+	width: 100%;
+	display: inline-block;
+}
+#logo {
+	width: 7%;
+	cursor:pointer
+}
+#logo2, #logo3 {
+	width: 7%;
+	display:none;
+	cursor:pointer
+}
+
+#header {
+	background-color: #009896;
+	width: 100%;
+/*	background-image: url("bckg.png");*/
+}
+#navbar {
+/*	background-color: white;*/
+	text-align: center;
+	margin-right: 0;
+	margin-left: 0;
+	margin-bottom: 0;
+	margin-top: 1%;
+}
+ #wrapper {
+	min-height: 75%; 
+	background-color: rgba(35,35,35,0.3);
+    z-index: 111;
+    font-size: 500%;
+    position: absolute;
+    margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	display: none;
+}
+
+button:hover {
+	background-color: #009896;
+	color: white;
+	border: none;
+}
+.active {
+	background-color: #009896;
+	color: white;
+}
+
+#counter {
+	width: 200px;
+	display: inline-block;
+	font-weight: bold;
+	color: white;
+}
+.xs-only{
+	display: none;
+}
+.btn-coursor{
+    cursor: pointer;
+}
+
+button {
+	border-radius: 12px;
+	border: none;
+	background: none;
+	text-transform: uppercase;
+	height: 100%;
+	display: inline-block;
+	padding: 1%;
+	color: #009896;
+	font-weight: bold;
+	outline: none;
+	font-size: 100%;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 80%;
+	transition: all 0.5s;
+		-webkit-transition: all 0.5s;
+		-moz-transition: all 0.5s;
+}
+.help {
+	display: block;
+	margin: 1.5%;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    z-index: 10000000000000000;
+
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border-radius: 15px;
+
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #009896;
+    color: white;
+    border-radius: 15px 15px 0px 0px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.modal-body {
+	padding: 20px 16px;
+	letter-spacing: 0px;
+	border-radius: 15px;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #009896;
+    color: white;
+    border-radius: 0px 0px 15px 15px;
+    font-family: 'Press Start 2P', cursive;
+}
+.img-help-icon {
+	width: 50px;
+	padding: 1%;
+}
+
+#gameOver {
+	color: white;
+	min-height: 100px;
+	position: absolute;
+	z-index: 1000;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+	display: none;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 9vw;
+	margin-top: 10%;
+}
+
+.doughnut {
+	background-image: url("food/doughnut.png");
+}
+.cheese-burger {
+	background-image: url("food/cheese-burger.png");
+}
+.cherries {
+	background-image: url("food/cherries.png");
+}
+.birthday-cake {
+	background-image: url("food/birthday-cake.png");
+}
+.watermelon {
+	background-image: url("food/watermelon.png");
+}
+.spaghetti {
+	background-image: url("food/spaghetti.png");
+}
+.pumpkin {
+	background-image: url("food/pumpkin.png");
+}
+.roast-chicken {
+	background-image: url("food/roast-chicken.png");
+}
+.salad {
+	background-image: url("food/salad.png");
+}
+.pizza {
+	background-image: url("food/pizza.png");
+}
+.rise {
+	background-image: url("food/rice.png");
+}
+.sushi {
+	background-image: url("food/sushi.png");
+}
+.pancakes {
+	background-image: url("food/pancakes.png");
+}
+.shrimp {
+	background-image: url("food/shrimp.png");
+}
+.muffin {
+	background-image: url("food/muffin.png");
+}
+.burrito {
+	background-image: url("food/burrito.png");
+}
+.chicken-leg {
+	background-image: url("food/chicken-leg.png");
+}
+.drink {
+	background-image: url("food/drink.png");
+}
+.french-fries {
+	background-image: url("food/french-fries.png");
+}
+.hot-dog {
+	background-image: url("food/hot-dog.png");
+}
+.avocado {
+	background-image: url("food/avocado.png");
+}
+.cabbage {
+	background-image: url("food/cabbage.png");
+}
+.eggplant {
+	background-image: url("food/eggplant.png");
+}
+.fish {
+	background-image: url("food/fish.png");
+}
+.fried-egg {
+	background-image: url("food/fried-egg.png");
+}
+.frozen-yogurt {
+	background-image: url("food/frozen-yogurt.png");
+}
+.grapes {
+	background-image: url("food/grapes.png");
+}
+.lemon {
+	background-image: url("food/lemon.png");
+}
+.lemonade {
+	background-image: url("food/lemonade.png");
+}
+.lobster {
+	background-image: url("food/lobster.png");
+}
+.orange {
+	background-image: url("food/orange.png");
+}
+.pear {
+	background-image: url("food/pear.png");
+}
+.pie {
+	background-image: url("food/pie.png");
+}
+.pineapple {
+	background-image: url("food/pineapple.png");
+}
+.pumpkin {
+	background-image: url("food/pumpkin.png");
+}
+.salt {
+	background-image: url("food/salt.png");
+}
+.sandwich {
+	background-image: url("food/sandwich.png");
+}
+.skewer {
+	background-image: url("food/skewer.png");
+}
+.soda-3 {
+	background-image: url("food/soda-3.png");
+}
+.soup {
+	background-image: url("food/soup.png");
+}
+.tomato {
+	background-image: url("food/tomato.png");
+}
+
+
+.default {
+	background-image: url("food/food.png");
+	background-size: contain;
+}
+
+.empty {
+	background-image: none;
+	background-color: #232323;
+}
+
+@media (max-width: 1600px) {
+	.container {
+		max-width: 800px;
+	}
+}
+
+@media (max-width: 1650px) {
+	.modal-content{
+		width: 60%;
+	}
+	#win, #lost, #tied {
+		font-size: 10vw;
+	}
+}
+@media (max-width: 1200px) {
+	#win, #lost, #tied {
+		font-size: 13vw;
+	}
+}
+@media (max-width: 900px) {
+	img#logo, img#logo3, img#logo2 {
+		width: 10%;
+	}
+	.modal-content {
+	    width: 90%;
+	}
+	.modal{
+		height: 80%;
+	}
+	#win, #lost, #tied {
+		font-size: 18vw;
+	}
+	.header-content > img {
+		width: 5%;
+	}
+	img.nono-md {
+		display: none;
+		width: 100%;
+	}
+}
+@media (max-width: 600px) {
+	img#logo, img#logo3, img#logo2 {
+		width: 15%;
+	}
+	.header-content > img {
+		width: 7%;
+	}
+	img.nono-sm {
+		display: none;
+		width: 100%;
+	}
+}
+@media (max-width: 900px) {
+	img#logo {
+		width: 10%;
+	}
+	img#logo3 {
+		width: 10%;
+	}
+	img#logo2 {
+		width: 10%;
+	}
+}
+@media (max-width: 520px) {
+	.xs-only{
+		display:inline-block;
+	}
+	#counter{
+		width: 100px;
+	}
+}
+
+

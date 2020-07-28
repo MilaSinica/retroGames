@@ -1,0 +1,419 @@
+body {
+	background-color: #232323;
+	margin: 0;
+	font-family: 'PT Sans Caption', sans-serif;
+	letter-spacing: 1px;
+}
+
+/*========================================Game body================================================================*/
+.square {
+	width: 78%;
+	display: inline-block;
+	float: left;
+	margin: 6%;
+	padding-bottom: 78%;
+	border: 3px solid black;
+	border-radius: 10px;
+	transition: all 0.5s;
+		-webkit-transition: all 0.5s;
+		-moz-transition: all 0.5s;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.square-player{
+    background-color: #009896;
+    cursor: pointer;
+}
+.sqare-player-off{
+	background-color: #009896;
+    cursor: pointer;
+}
+.square-player-hover:hover{
+    background-color: #f4e662;
+}
+.square-comp{
+    background-color: #ed3b72;
+}
+.wrap{
+	margin: 1% auto;
+	width: 100%;
+	text-align: center;
+}
+.container {
+	padding: 1%;
+	margin: 1% auto;
+	display: inline-block;
+	position: relative;
+	text-align: center;
+}
+.container-md {
+	width: 30%;
+	max-width: 300px;
+	vertical-align: middle;
+}
+.container-sm {
+	width: 20%;
+	vertical-align: top;
+}
+.col{
+	margin: 0 auto;
+	display: inline-block;
+	position: relative;
+	text-align: center;
+}
+.col-xs{
+	width: 25%;
+}
+.col-md{
+	width: 70%;
+	vertical-align: top;
+}
+.choise{
+	width: 90%;
+	display: inline-block;
+	margin: 0;
+	padding-bottom: 90%;
+	border-radius: 25px;
+	transition: all 0.5s;
+		-webkit-transition: all 0.5s;
+		-moz-transition: all 0.5s;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.choise-computer{
+	background-image: url(heros/scissors.png);
+}
+.choise-player{
+	background-image: url(heros/rock.png);
+}
+.s1{
+	background-image: url(heros/rock.png);
+}
+.s2{
+	background-image: url(heros/paper.png);
+}
+.s3{
+	background-image: url(heros/scissors.png);
+}
+.s4{
+	background-image: url(heros/lizard.png);
+}
+.s5{
+	background-image: url(heros/spock.png);
+}
+.speech{
+	width: 90%;
+	margin: 0 auto;
+}
+/*======================================Header and navbar========================================================================*/
+.header-content{
+	padding: 1% 1% 0% 1%;
+	text-align: justify;
+}
+.header-content > img {
+	width: 3.5%; /* Declare your value. Can be in relative units. */
+	display: inline-block;
+	vertical-align: middle;
+	/* IE fix. */
+	*display: inline;
+	zoom: 1;
+	}
+.header-content:after {
+	content: "";
+	width: 100%;
+	display: inline-block;
+    }
+#logo, #logo2, #logo3 {
+	cursor:pointer;
+	width: 7%;
+}
+#logo2, #logo3 {
+	display:none;
+}
+#header {
+	background-color: #009896;
+	width: 100%;
+}
+#navbar {
+	text-align: center;
+	margin: 1% 0 0 0;
+}
+span {
+	margin: 0;
+}
+.active {
+	background-color: #009896;
+	color: white;
+}
+/*======================================Buttons and result/goal displays====================================*/
+
+.btn-coursor{
+	cursor: pointer;
+}
+button{
+	border-radius: 12px;
+	height: 100%;
+	display: inline-block;
+	padding: 1%;
+	text-transform: uppercase;
+	font-weight: bold;
+	outline: none;
+	font-size: 100%;
+	font-family: 'Press Start 2P', cursive;
+	transition: all 0.5s;
+		-webkit-transition: all 0.5s;
+		-moz-transition: all 0.5s;
+}
+.text{
+	transition: all 0.5s;
+		-webkit-transition: all 0.5s;
+		-moz-transition: all 0.5s;
+	font-size: 0.6vw;
+	font-weight: bold;
+	font-family: 'Press Start 2P', cursive;
+	word-spacing: 0.1em;
+	text-transform: uppercase;
+	line-height: 200%;
+	text-align: center;
+}
+.info-bar{
+	color: white;
+	text-align: center;
+	margin: 10% auto 0 auto;
+/*	background-color: #009860;*/
+	width: 80%;
+	border: 6px solid black;
+	border-radius: 15px;
+	padding: 10% 2%;
+}
+.main-btn {
+	background: none;
+	color: #009896;
+	font-size: 80%;
+	border: none;
+	margin: 0 8%;
+}
+.main-btn:hover {
+	background-color: #009896;
+	color: white;
+	border: none;
+}
+.play-again:hover {
+	background-color: #009860;
+/*	color: #f4e662;*/
+}
+.help {
+	display: block;
+	margin: 1.5%;
+}
+.score-board{
+	vertical-align: top;
+	margin: 0 0 10% 0;
+	text-align: center;
+}
+.score{
+	width: 38%;
+	padding: 7% 1%;
+	display: inline-block;
+	border-radius: 15px;
+	border: 4px solid black;
+	margin: 0;
+}
+.pl-score{
+	background-color: #009896;
+}
+.comp-score{
+	background-color: #ed3b72; 
+}
+
+/*===============================================After win/loss/game over classes on top of HTML=======================================*/
+
+#win, #lost, #tied {
+	color: white;
+	min-height: 100px;
+	position: absolute;
+	z-index: 1000;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+	display: none;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 9vw;
+	margin-top: 10%;
+}
+/*=====================================================Modal Window=================================================================*/
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    z-index: 10000000000000000;
+
+}
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border-radius: 15px;
+
+}
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-header {
+    padding: 2px 16px;
+    background-color: #009896;
+    color: white;
+    border-radius: 15px 15px 0px 0px;
+    font-family: 'Press Start 2P', cursive;
+}
+.modal-body {
+	padding: 20px 16px;
+	letter-spacing: 0px;
+	border-radius: 15px;
+}
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #009896;
+    color: white;
+    border-radius: 0px 0px 15px 15px;
+    font-family: 'Press Start 2P', cursive;
+}
+.img-help-icon {
+	width: 50px;
+	padding: 1%;
+}
+
+/*=============================================Media Queries============================================================*/
+@media (max-width: 2250px) {
+	.text{
+		font-size: 0.8vw;
+	}
+	.info-bar{
+		margin: 15% auto 0 auto;
+	}
+}
+@media (max-width: 1900px) {
+	.text{
+		font-size: 0.9vw;
+	}
+	.info-bar{
+		margin: 20% auto 0 auto;
+	}
+}
+@media (max-width: 1650px) {
+	.text{
+		font-size: 1vw;
+	}
+	.info-bar{
+		margin: 30% auto 0 auto;
+	}
+	.modal-content{
+		width: 60%;
+	}
+	#win, #lost, #tied {
+		font-size: 10vw;
+	}
+}
+@media (max-width: 1200px) {
+	#win, #lost, #tied {
+		font-size: 13vw;
+	}
+}
+
+@media (max-width: 900px) {
+	.header-content > img {
+		width: 5%;
+	}
+	img.nono-md {
+		display: none;
+		width: 100%;
+	}
+	img#logo, img#logo3, img#logo2 {
+		width: 10%;
+	}
+	.modal-content {
+	    width: 90%;
+	}
+	.modal{
+		height: 80%;
+	}
+	#win, #lost, #tied {
+		font-size: 18vw;
+	}
+}
+@media (max-width: 600px) {
+	.info-bar{
+		border: 3px solid black;
+		border-radius: 5px;
+	}
+	.result-section{
+		width: 30%;
+	}
+	.score{
+		width: 35%;
+		border: 2px solid black;
+		border-radius: 10px;
+	}
+	.header-content > img {
+		width: 7%;
+	}
+	img.nono-sm {
+		display: none;
+		width: 100%;
+	}
+	img#logo, img#logo3, img#logo2 {
+		width: 15%;
+	}
+}
+@media (max-width: 400px) {
+	img.nono-xs {
+		display: none;
+	}
+	.square {
+		border: 2px solid black;
+	}
+	.col-md{
+		width: 68%;
+	}
+}

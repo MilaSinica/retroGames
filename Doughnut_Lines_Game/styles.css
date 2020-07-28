@@ -1,0 +1,269 @@
+body {
+	background-color: #232323;
+	margin: 0;
+	font-family: 'PT Sans Caption', sans-serif;
+	letter-spacing: 1px;
+
+}
+/*========================================Game body================================================================*/
+p {
+	width: 9%;
+	display: inline-block;
+	float: left;
+	margin: 0.5%;
+	padding-bottom: 9%;
+	border: 2px solid #232323;
+	transition: all 1s;
+		-webkit-transition: all 1s;
+		-moz-transition: all 1s;
+	background-image: url("square.png");
+	background-size: contain;
+	border-radius: 30%;
+}
+.container {
+	padding-top: 0.1%; 
+	max-width: 500px;
+	margin: 1% auto;
+	text-align: center;
+}
+/*=======================================Header and navbar========================================================================*/
+.header-content{
+	padding: 1% 1% 0% 1%;
+	text-align: justify;
+}
+.header-content > img {
+	width: 3.5%; /* Declare your value. Can be in relative units. */
+	display: inline-block;
+	vertical-align: middle;
+
+	/* IE fix. */
+	*display: inline;
+	zoom: 1;
+}
+.header-content:after {
+	content: "";
+	width: 100%;
+	display: inline-block;
+}
+#logo, #logo2, #logo3 {
+	cursor:pointer;
+	width: 7%;
+}
+#logo2, #logo3 {
+	display:none;
+}
+#header {
+	background-color: #009896;
+	width: 100%;
+}
+#navbar {
+	text-align: center;
+	margin: 1% 0 0 0;
+}
+/*======================================Buttons and point/time counters==============================================================*/
+button:hover, .active {
+	background-color: #009896;
+	color: white;
+	border: none;
+}
+#points {
+	width: 250px;
+	display: inline-block;
+	font-weight: bold;
+	color: white;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 80%
+}
+
+.btn-coursor{
+    cursor: pointer;
+}
+
+button {
+	border-radius: 12px;
+	border: none;
+	background: none;
+	text-transform: uppercase;
+	height: 100%;
+	display: inline-block;
+	padding: 1%;
+	color: #009896;
+	font-weight: bold;
+	outline: none;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 80%;
+	transition: all 0.5s;
+		-webkit-transition: all 0.5s;
+		-moz-transition: all 0.5s;
+}
+.help {
+	display: block;
+	margin: 1.5%;
+}
+/*=====================================================Modal Window=================================================================*/
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    z-index: 10000000000000000;
+
+}
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border-radius: 15px;
+}
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-header {
+    padding: 2px 16px;
+    background-color: #009896;
+    color: white;
+    border-radius: 15px 15px 0px 0px;
+    font-family: 'Press Start 2P', cursive;
+}
+.modal-body {
+	padding: 20px 16px;
+	letter-spacing: 0px;
+	border-radius: 15px;
+}
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #009896;
+    color: white;
+    border-radius: 0px 0px 15px 15px;
+    font-family: 'Press Start 2P', cursive;
+}
+.img-help-icon {
+	width: 50px;
+	padding: 1%;
+}
+/*===============================================After win/loss/game over classes on top of HTML=======================================*/
+#wrapper {
+	min-height: 75%; 
+	background-color: rgba(35,35,35,0.3);
+    z-index: 111;
+    font-size: 500%;
+    position: absolute;
+    margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	display: none;
+}
+#lost {
+	color: white;
+	position: absolute;
+	z-index: 1000;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+	display: none;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 50px;
+	margin-top: 185px;
+	padding: 50px 0;
+}
+
+/*=============================================Media Queries============================================================*/
+@media (max-width: 900px) {
+	.header-content > img {
+		width: 5%;
+	}
+	img.nono-md {
+		display: none;
+		width: 100%;
+	}
+	img#logo, img#logo3, img#logo2 {
+		width: 10%;
+	}
+}
+@media (max-width: 600px) {
+	.header-content > img {
+		width: 7%;
+	}
+	img.nono-sm {
+		display: none;
+		width: 100%;
+	}
+	img#logo, img#logo3, img#logo2 {
+		width: 15%;
+	}
+}
+@media (max-width: 400px) {
+	img.nono-xs {
+		display: none;
+	}
+}
+/*====================Classes for game images===============================================*/
+.blue {
+	background-image: url("donut-teal-x.png");
+	background-size: contain;
+}
+.pink {
+	background-image: url("donut-pinkish-x.png");
+	background-size: contain;
+}
+.yellow {
+	background-image: url("donut-yellow-x.png");
+	background-size: contain;
+}
+.green {
+	background-image: url("donut-green-x.png");
+	background-size: contain;
+}
+.multic {
+	background-image: url("donut-x.png");
+	background-size: contain;
+}
+.chocolate {
+	background-image: url("donut-orange-x.png");
+	background-size: contain;
+}
+.red {
+	background-image: url("donut-purple-x.png");
+	background-size: contain;
+}
+
